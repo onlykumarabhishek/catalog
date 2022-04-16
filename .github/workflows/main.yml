@@ -121,6 +121,7 @@ jobs:
     needs: publish
 
     steps:
+    - uses: actions/checkout@v3.0.0
     - run: |
             export TAG=$(echo $GITHUB_REF | sed -e "s#^refs/heads/##")
             git tag $TAG
